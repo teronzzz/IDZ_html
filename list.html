@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список самых популярных сериалов</title>
+</head>
+<body>
+    <p>
+        <a href="main.html">Самые популярные сериалы</a><br>
+        <a href="list.html"><b>Список самых популярных сериалов</b></a>
+    </p>
+    <hr>
+    <form>
+        <details>
+            <summary>График</summary>
+             <table>
+                <tr align="center">
+                    <td>
+                        <b>Значение по оси OX</b>
+                    </td>
+                    <td>
+                        <b>Результат</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input  type="radio"  name="parameters" value="type">Дата выхода
+                    </td>
+                    <td>
+                        <input type="checkbox" name="results" value="0">Максимальный рейтинг
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input  type="radio"  name="parameters" value="country">Страна
+                    </td>
+                    <td>
+                        <input type="checkbox" name="results" value="1">Минимальный рейтинг
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input  type="radio"  name="parameters" value="seasons">Количество сезонов
+                    </td>
+                    <td>
+                        <input type="checkbox" name="results" value="2">Количество сериалов
+                    </td>
+                </tr>
+             </table>
+             <p><input type="button" value="Построить"></p>
+          </details>
+    </form>
+    <form>
+        <details>
+            <summary>Фильтр</summary>
+            <p>
+                <label>Название сериала: 
+                   <input type="text" name="nameSerial" id="nameSerial">
+                </label>
+            </p>
+            <p>
+                <label>Дата выхода: от 
+                    <input type="text" name="date" id="date1"> до 
+                </label>
+                <label>
+                    <input type="text" name="date" id="date2">
+                </label>
+            </p>
+            <p>
+                <label>Страна: 
+                    <input type="text" name="country" id="country">
+                </label>
+            </p>
+            <p>
+                <label>Количество сезонов: от 
+                    <input type="text" name="seasons" id="seasons1"> до 
+                </label>
+                <label>
+                    <input type="text" name="seasons" id="seasons2">
+                </label>
+            </p>
+            <p>
+                <label>Рейтинг: 
+                    <input type="text" name="rank" id="rank1"> до 
+                </label>
+                <label>
+                    <input type="text" name="rank" id="rank2">
+                </label>
+            </p>
+            <p><input type="button" value="Найти"></p>
+        </details>
+    </form>
+    <form>
+        <details>
+            <summary>Сортировка</summary>
+            <p>
+                <label>Первый уровень:  
+                    <select id="sort1">
+                        <option value="0" selected> Нет </option>
+                        <option value="1"> Дата выхода </option>
+                        <option value="2"> Страна </option>
+                        <option value="3"> Количество сезонов </option>
+                        <option value="4"> Рейтинг </option>
+                        <option value="5"> Жанр </option>
+                    </select>
+                </label>
+                <label>по убыванию?
+                    <input type="checkbox" name="check" value="0">
+                </label>
+            </p>
+            <p>
+                <label>Второй уровень:  
+                    <select id="sort2">
+                        <option value="0" selected> Нет </option>
+                        <option value="1"> Дата выхода </option>
+                        <option value="2"> Страна </option>
+                        <option value="3"> Количество сезонов </option>
+                        <option value="4"> Рейтинг </option>
+                        <option value="5"> Жанр </option>
+                    </select>
+                </label>
+                <label>по убыванию?
+                    <input type="checkbox" name="check" value="0">
+                </label>
+            </p>
+            <p>
+                <label>Третий уровень:  
+                    <select id="sort3">
+                        <option value="0" selected> Нет </option>
+                        <option value="1"> Дата выхода </option>
+                        <option value="2"> Страна </option>
+                        <option value="3"> Количество сезонов </option>
+                        <option value="4"> Рейтинг </option>
+                        <option value="5"> Жанр </option>
+                    </select>
+                </label>
+                <label>по убыванию?
+                    <input type="checkbox" name="check" value="0">
+                </label>
+            </p>
+            <p>
+                <input type="button" value="Сортировать">  
+            </p>
+        </details>
+    </form>
+    <form>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <thead>
+                <tr align="center">
+                    <th>Название сериала</th>
+                    <th>Дата выхода</th>
+                    <th>Страна</th>
+                    <th>Кол-во сезонов</th>
+                    <th>Рейтинг (IMDb)</th>
+                    <th>Жанр</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Во все тяжкие</td>
+                    <td>2008</td>
+                    <td>США</td>
+                    <td>5</td>
+                    <td>9.5</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Игра престолов</td>
+                    <td>2011</td>
+                    <td>США</td>
+                    <td>8</td>
+                    <td>9.3</td>
+                    <td>Фэнтези</td>
+                </tr>
+                <tr>
+                    <td>Чернобыль</td>
+                    <td>2019</td>
+                    <td>США, Великобритания</td>
+                    <td>1</td>
+                    <td>9.4</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Шерлок</td>
+                    <td>2010</td>
+                    <td>Великобритания</td>
+                    <td>4</td>
+                    <td>9.1</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Клан Сопрано</td>
+                    <td>1999</td>
+                    <td>США</td>
+                    <td>6</td>
+                    <td>9.2</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Друзья</td>
+                    <td>1994</td>
+                    <td>США</td>
+                    <td>10</td>
+                    <td>8.9</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Стрэнджер Тингс</td>
+                    <td>2016</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>8.7</td>
+                    <td>Фантастика</td>
+                </tr>
+                <tr>
+                    <td>Фарго</td>
+                    <td>2014</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>8.9</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Настоящий детектив</td>
+                    <td>2014</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>8.9</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Мир Дикого Запада</td>
+                    <td>2016</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>8.6</td>
+                    <td>Фантастика</td>
+                </tr>
+                <tr>
+                    <td>Мир Дикого Запада</td>
+                    <td>2016</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>8.6</td>
+                    <td>Фантастика</td>
+                </tr>
+                <tr>
+                    <td>Очень странные дела</td>
+                    <td>2017</td>
+                    <td>Германия</td>
+                    <td>3</td>
+                    <td>8.7</td>
+                    <td>Фантастика</td>
+                </tr>
+                <tr>
+                    <td>Острые козырьки</td>
+                    <td>2013</td>
+                    <td>Великобритания</td>
+                    <td>6</td>
+                    <td>8.8</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Доктор Кто</td>
+                    <td>2005</td>
+                    <td>Великобритания</td>
+                    <td>13</td>
+                    <td>8.6</td>
+                    <td>Фантастика</td>
+                </tr>
+                <tr>
+                    <td>Мандалорец</td>
+                    <td>2019</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>8.8</td>
+                    <td>Фантастика</td>
+                </tr>
+                <tr>
+                    <td>Коронa</td>
+                    <td>2016</td>
+                    <td>Великобритания</td>
+                    <td>6</td>
+                    <td>8.6</td>
+                    <td>Биография</td>
+                </tr>
+                <tr>
+                    <td>Карточный домик</td>
+                    <td>2013</td>
+                    <td>США</td>
+                    <td>6</td>
+                    <td>8.7</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Офис</td>
+                    <td>2005</td>
+                    <td>США</td>
+                    <td>9</td>
+                    <td>9.0</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Лост</td>
+                    <td>2004</td>
+                    <td>США</td>
+                    <td>6</td>
+                    <td>8.3</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Одинокие сердца</td>
+                    <td>2003</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>7.5</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Настоящие крови</td>
+                    <td>2008</td>
+                    <td>США</td>
+                    <td>7</td>
+                    <td>7.9</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Чудотворцы</td>
+                    <td>2019</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>7.1</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Викинги</td>
+                    <td>2013</td>
+                    <td>Ирландия, Канада</td>
+                    <td>6</td>
+                    <td>8.5</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Ганнибал</td>
+                    <td>2013</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>8.5</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Чужестранка</td>
+                    <td>2014</td>
+                    <td>США</td>
+                    <td>7</td>
+                    <td>8.4</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Рик и Морти</td>
+                    <td>2013</td>
+                    <td>США</td>
+                    <td>6</td>
+                    <td>9.1</td>
+                    <td>Анимация</td>
+                </tr>
+                <tr>
+                    <td>БоДжек Хорсмен</td>
+                    <td>2014</td>
+                    <td>США</td>
+                    <td>6</td>
+                    <td>8.7</td>
+                    <td>Анимация</td>
+                </tr>
+                <tr>
+                    <td>Барри</td>
+                    <td>2018</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>8.3</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Нарко</td>
+                    <td>2015</td>
+                    <td>США, Колумбия</td>
+                    <td>3</td>
+                    <td>8.8</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Дэдвуд</td>
+                    <td>2004</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>8.6</td>
+                    <td>Вестерн</td>
+                </tr>
+                <tr>
+                    <td>Академия Амбрелла</td>
+                    <td>2019</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>7.9</td>
+                    <td>Экшн</td>
+                </tr>
+                <tr>
+                    <td>Призраки усадьбы Блай</td>
+                    <td>2020</td>
+                    <td>США</td>
+                    <td>1</td>
+                    <td>7.4</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Мир дикого запада</td>
+                    <td>2016</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>8.6</td>
+                    <td>Фантастика</td>
+                </tr>
+                <tr>
+                    <td>Эйфория</td>
+                    <td>2019</td>
+                    <td>США</td>
+                    <td>2</td>
+                    <td>8.4</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Эмили в Париже</td>
+                    <td>2020</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>7.1</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Локи</td>
+                    <td>2021</td>
+                    <td>США</td>
+                    <td>2</td>
+                    <td>8.2</td>
+                    <td>Экшн</td>
+                </tr>
+                <tr>
+                    <td>Тед Лассо</td>
+                    <td>2020</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>8.8</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Король тигров</td>
+                    <td>2020</td>
+                    <td>США</td>
+                    <td>2</td>
+                    <td>7.5</td>
+                    <td>Документальный</td>
+                </tr>
+                <tr>
+                    <td>Квинс Гамбит</td>
+                    <td>2020</td>
+                    <td>США</td>
+                    <td>1</td>
+                    <td>8.6</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Джек Райан</td>
+                    <td>2018</td>
+                    <td>США</td>
+                    <td>2</td>
+                    <td>8.1</td>
+                    <td>Экшн</td>
+                </tr>
+                <tr>
+                    <td>Люцифер</td>
+                    <td>2016</td>
+                    <td>США</td>
+                    <td>6</td>
+                    <td>8.1</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Мост</td>
+                    <td>2011</td>
+                    <td>Швеция, Дания</td>
+                    <td>4</td>
+                    <td>8.6</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Наследники</td>
+                    <td>2018</td>
+                    <td>США</td>
+                    <td>4</td>
+                    <td>8.8</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Благие знамения</td>
+                    <td>2019</td>
+                    <td>Великобритания</td>
+                    <td>2</td>
+                    <td>8.1</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Ходячие мертвецы</td>
+                    <td>2010</td>
+                    <td>США</td>
+                    <td>11</td>
+                    <td>8.2</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Твин Пикс</td>
+                    <td>1990</td>
+                    <td>США</td>
+                    <td>3</td>
+                    <td>8.8</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Барри</td>
+                    <td>2018</td>
+                    <td>США</td>
+                    <td>2</td>
+                    <td>8.3</td>
+                    <td>Комедия</td>
+                </tr>
+                <tr>
+                    <td>Декстер</td>
+                    <td>2006</td>
+                    <td>США</td>
+                    <td>8</td>
+                    <td>8.6</td>
+                    <td>Криминал</td>
+                </tr>
+                <tr>
+                    <td>Бриджертоны</td>
+                    <td>2020</td>
+                    <td>США</td>
+                    <td>2</td>
+                    <td>7.4</td>
+                    <td>Драма</td>
+                </tr>
+                <tr>
+                    <td>Убивая Еву</td>
+                    <td>2018</td>
+                    <td>Великобритания</td>
+                    <td>4</td>
+                    <td>8.2</td>
+                    <td>Триллер</td>
+                </tr>
+                <tr>
+                    <td>Черное зеркало</td>
+                    <td>2011</td>
+                    <td>Великобритания</td>
+                    <td>5</td>
+                    <td>8.8</td>
+                    <td>Триллер</td>
+                </tr>
+            </tbody>
+        </table>
+    </form> 
+</body>
+</html>
